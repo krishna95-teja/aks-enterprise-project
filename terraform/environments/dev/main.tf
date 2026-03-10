@@ -29,7 +29,7 @@ resource "azurerm_kubernetes_cluster" "aks_dev" {
     dns_prefix = "aksdev"
     default_node_pool {
         name = "default"
-        node_count = 2
+        node_count = 1                             # Since D2s_v3 has vcpu quota of 2 but the free tier supports only vcpu quota of 1 for this image
         vm_size = "Standard_D2s"
         vnet_subnet_id = azurerm_subnet.aks_subnet_dev.id
     }
