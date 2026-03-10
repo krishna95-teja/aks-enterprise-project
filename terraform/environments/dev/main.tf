@@ -40,6 +40,8 @@ resource "azurerm_kubernetes_cluster" "aks_dev" {
 
     network_profile {
         network_plugin = "azure"              # Available CNI plugins are azure/kubenet
+        service_cidr   = "10.2.0.0/16"
+        dns_service_ip = "10.2.0.10"
     }
 
     tags = {
