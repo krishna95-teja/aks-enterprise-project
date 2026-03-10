@@ -10,7 +10,6 @@ resource "azurerm_virtual_network" "aks_vnet_dev" {
     location = data.azurerm_resource_group.aks_rg_dev.location
     resource_group_name = data.azurerm_resource_group.aks_rg_dev.name
     address_space = ["10.0.0.0/16"]
-    dns_servers = ["10.0.0.4", "10.0.0.5"]
 }
 
 #Define Subnet block separately for better reference to subnet_id in aks block
