@@ -40,6 +40,7 @@ resource "azurerm_kubernetes_cluster" "aks_dev" {
 
     network_profile {
         network_plugin = "azure"              # Available CNI plugins are azure/kubenet
+        outbound_type  = "loadBalancer"       # Load balancer is provisioned automatically to enable nodes to reach internet to download software
         service_cidr   = "10.2.0.0/16"
         dns_service_ip = "10.2.0.10"
     }
